@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, ShieldCheck, CreditCard, Banknote, Smartphone, MessageCircle, Copy, Check } from 'lucide-react';
+import { X, CheckCircle, ShieldCheck, CreditCard, Banknote, Smartphone, Copy, Check, Phone } from 'lucide-react';
+import { InstagramIcon } from './icons/InstagramIcon';
 import { useCart } from '../context/CartContext';
 
 interface CheckoutModalProps {
@@ -64,10 +65,6 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
     setCopiedReceipt(true);
     setTimeout(() => setCopiedReceipt(false), 2000);
   };
-
-  const whatsappConfirmationLink = encodeURIComponent(
-    `Hello SEHR,\nI have placed order ${confirmedOrderId}.\nName: ${formData.fullName}\nPhone: ${formData.phone}\nDelivery: ${formData.address}, ${formData.district}\nTotal: ${formattedCurrency(total)}\nPayment Choice: ${formData.paymentMethod.toUpperCase()}`
-  );
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
@@ -136,13 +133,13 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
               {/* Actions */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
                 <a
-                  href={`https://wa.me/8801700000000?text=${whatsappConfirmationLink}`}
+                  href="https://ig.me/m/sehr.bd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-5 py-3 bg-brand-amber hover:bg-amber-900 text-white rounded-lg text-xs font-medium uppercase tracking-wider transition flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-5 py-3 bg-[#2c221e] hover:bg-black text-white rounded-lg text-xs font-medium uppercase tracking-wider transition flex items-center justify-center gap-2 shadow"
                 >
-                  <MessageCircle size={16} />
-                  <span>Notify via WhatsApp</span>
+                  <InstagramIcon size={16} />
+                  <span>Order Support on Instagram</span>
                 </a>
 
                 <button

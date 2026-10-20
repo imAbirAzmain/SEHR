@@ -165,47 +165,47 @@ export const BrandStory: React.FC = () => {
               </p>
             </div>
 
-            {/* WhatsApp Concierge */}
+            {/* Direct Line / Contact */}
             <div className="space-y-3 p-6 bg-white/70 border border-stone-200/90 text-center flex flex-col items-center">
               <div className="w-10 h-10 rounded-full bg-[#f4ede4] flex items-center justify-center text-[#5a483c]">
-                <MessageCircle size={18} />
+                <Phone size={18} />
               </div>
               <h4 className="text-xs uppercase tracking-widest font-bold text-stone-900 font-sans">
-                Direct Concierge
+                Atelier Contact
               </h4>
               <p className="text-xs text-stone-600 font-light leading-relaxed">
-                WhatsApp: <a href="https://wa.me/8801700000000" target="_blank" rel="noopener noreferrer" className="underline font-medium hover:text-[#5a483c]">+880 1700-000000</a>
+                Direct Line: <a href="tel:+8801914577315" className="underline font-medium hover:text-[#5a483c]">+880 1914 577315</a>
                 <br />
-                <span className="text-stone-500 text-[11px]">Direct sizing advice & order placement</span>
+                <span className="text-stone-500 text-[11px]">Direct inquiries & bespoke assistance</span>
               </p>
             </div>
 
-            {/* Hours & Digital Contact */}
+            {/* Hours & Instagram DM */}
             <div className="space-y-3 p-6 bg-white/70 border border-stone-200/90 text-center flex flex-col items-center">
               <div className="w-10 h-10 rounded-full bg-[#f4ede4] flex items-center justify-center text-[#5a483c]">
-                <Clock size={18} />
+                <InstagramIcon size={18} />
               </div>
               <h4 className="text-xs uppercase tracking-widest font-bold text-stone-900 font-sans">
-                Atelier Hours
+                Instagram Concierge
               </h4>
               <p className="text-xs text-stone-600 font-light leading-relaxed">
-                Sat – Thu: 10:00 AM – 8:00 PM BST
+                DM: <a href="https://ig.me/m/sehr.bd" target="_blank" rel="noopener noreferrer" className="underline font-medium hover:text-[#5a483c]">@sehr.bd</a>
                 <br />
                 <a href="mailto:concierge@sehr.bd" className="text-stone-500 hover:text-stone-900 text-[11px] underline">concierge@sehr.bd</a>
               </p>
             </div>
           </div>
 
-          {/* Centered WhatsApp Action */}
+          {/* Centered Instagram Action */}
           <div className="mt-10 text-center">
             <a
-              href="https://wa.me/8801700000000?text=Hello%20SEHR,%20I%20would%20like%20to%20inquire%20about%20visiting%20the%20Dhaka%20Atelier."
+              href="https://ig.me/m/sehr.bd"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#603500] hover:bg-[#4a2800] text-white rounded-lg text-xs font-semibold tracking-[0.18em] uppercase transition duration-300 shadow hover:shadow-md"
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#2c221e] hover:bg-black text-white rounded-lg text-xs font-semibold tracking-[0.18em] uppercase transition duration-300 shadow hover:shadow-md"
             >
-              <MessageCircle size={16} />
-              <span>Connect with Dhaka Concierge</span>
+              <InstagramIcon size={16} className="text-[#dfc29c]" />
+              <span>Connect on Instagram (@sehr.bd)</span>
             </a>
           </div>
         </div>

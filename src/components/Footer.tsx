@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageCircle, Mail, MapPin, Phone, ArrowRight, Check } from 'lucide-react';
+import { Mail, MapPin, Phone, ArrowRight, Check } from 'lucide-react';
 import { InstagramIcon } from './icons/InstagramIcon';
 
 interface FooterProps {
@@ -41,17 +41,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenSizeGuide, onNavigateSecti
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 flex items-center justify-center text-stone-300 hover:text-white hover:border-brand-gold transition"
                 aria-label="Instagram"
+                title="Follow @sehr.bd"
               >
                 <InstagramIcon size={16} />
               </a>
               <a
-                href="https://wa.me/8801700000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 flex items-center justify-center text-stone-300 hover:text-emerald-400 hover:border-emerald-500 transition"
-                aria-label="WhatsApp"
+                href="tel:+8801914577315"
+                className="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 flex items-center justify-center text-stone-300 hover:text-white hover:border-brand-gold transition"
+                aria-label="Call Concierge"
+                title="Call Concierge"
               >
-                <MessageCircle size={16} />
+                <Phone size={15} />
               </a>
             </div>
           </div>
@@ -120,23 +120,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenSizeGuide, onNavigateSecti
                 </button>
               </li>
               <li>
-                <a
-                  href="https://wa.me/8801700000000?text=Hello%20SEHR,%20I%20would%20like%20to%20inquire%20about%20delivery%20and%20tracking."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition block"
-                >
-                  Express Courier & Delivery Info
-                </a>
+                <span className="text-stone-400 block">
+                  Express Courier: Dhaka & Nationwide
+                </span>
               </li>
               <li>
                 <a
-                  href="https://wa.me/8801700000000?text=Hello%20SEHR,%20I%20need%20custom%20alteration%20support."
+                  href="https://ig.me/m/sehr.bd"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition block"
                 >
-                  Complimentary Alteration Support
+                  Complimentary Alteration Support (Instagram DM)
                 </a>
               </li>
               <li className="pt-2 flex items-start gap-2 text-stone-400">
@@ -145,7 +140,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenSizeGuide, onNavigateSecti
               </li>
               <li className="flex items-center gap-2 text-stone-400">
                 <Phone size={14} className="text-brand-gold flex-shrink-0" />
-                <span>+880 1700-000000</span>
+                <a href="tel:+8801914577315" className="hover:text-white transition">+880 1914 577315</a>
+              </li>
+              <li className="flex items-center gap-2 text-stone-400">
+                <InstagramIcon size={14} className="text-brand-gold flex-shrink-0" />
+                <a href="https://www.instagram.com/sehr.bd" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">@sehr.bd</a>
               </li>
             </ul>
           </div>

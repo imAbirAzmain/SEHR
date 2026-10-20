@@ -77,7 +77,7 @@ export const CATEGORIES = [
 export const ANNOUNCEMENTS = [
   'Complimentary Express Shipping in Dhaka on orders over ৳10,000',
   'Echoes of Grace — Eid ul Fitr 2026 Presentation Now Live',
-  'WhatsApp Concierge Available: Sizing & Custom Alterations',
+  'Instagram Concierge (@sehr.bd): Sizing & Custom Alterations',
   'Worldwide Courier & International Dispatch to UK, USA & UAE'
 ];
 

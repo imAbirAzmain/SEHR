@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { X, Ruler, HelpCircle, MessageCircle } from 'lucide-react';
+import { X, Ruler, HelpCircle } from 'lucide-react';
+import { InstagramIcon } from './icons/InstagramIcon';
 import { SIZE_CHART } from '../data/products';
 
 interface SizeGuideModalProps {
@@ -133,13 +134,13 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose 
               </p>
             </div>
             <a
-              href="https://wa.me/8801700000000?text=Hello%20SEHR,%20I%20need%20custom%20measurements%20for%20my%20order."
+              href="https://ig.me/m/sehr.bd"
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap px-4 py-2 bg-brand-amber text-white text-xs font-medium rounded-md hover:bg-amber-900 transition flex items-center gap-1.5"
+              className="whitespace-nowrap px-4 py-2 bg-[#2c221e] text-white text-xs font-medium rounded-md hover:bg-black transition flex items-center gap-1.5 shadow"
             >
-              <MessageCircle size={14} />
-              <span>Chat with Tailor</span>
+              <InstagramIcon size={14} />
+              <span>DM on Instagram</span>
             </a>
           </div>
         </div>

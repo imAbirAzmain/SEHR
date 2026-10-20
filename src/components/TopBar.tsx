@@ -55,13 +55,11 @@ export const TopBar: React.FC = () => {
         {/* Right: Concierge Phone & Currency */}
         <div className="hidden lg:flex items-center gap-4 text-stone-300">
           <a
-            href="https://wa.me/8801700000000?text=Hello%20SEHR,%20I%20would%20like%20to%20inquire%20about%20the%20Echoes%20of%20Grace%20collection."
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+8801914577315"
             className="flex items-center gap-1.5 hover:text-[#dfc29c] transition"
           >
             <Phone size={12} className="text-[#dfc29c]" />
-            <span className="text-[11px]">Concierge: +880 1700-000000</span>
+            <span className="text-[11px]">Concierge: +880 1914 577315</span>
           </a>
           <span className="text-stone-500">|</span>
           <span className="font-medium text-stone-200">BDT (৳)</span>

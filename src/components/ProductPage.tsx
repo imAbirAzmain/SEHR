@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Product } from '../types';
 import { PRODUCTS } from '../data/products';
-import { ChevronLeft, ChevronRight, Truck, RotateCcw, MessageCircle, ShoppingBag, Ruler, Check, Heart, Maximize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Truck, RotateCcw, ShoppingBag, Ruler, Check, Heart, Maximize2 } from 'lucide-react';
+import { InstagramIcon } from './icons/InstagramIcon';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 
@@ -50,10 +51,6 @@ export const ProductPage: React.FC<ProductPageProps> = ({
     setAddedToast(true);
     setTimeout(() => setAddedToast(false), 1500);
   };
-
-  const whatsappOrderMessage = encodeURIComponent(
-    `Hello SEHR Atelier,\nI would like to order "${product.name} | Echoes of Grace" in Size ${selectedSize} (${formattedPrice}).\nPlease confirm availability and dispatch schedule.`
-  );
 
   return (
     <div className="bg-white text-stone-900 min-h-screen pt-4 pb-20">
@@ -251,27 +248,27 @@ export const ProductPage: React.FC<ProductPageProps> = ({
               </div>
             </div>
 
-            {/* Guzel Style Full Width Buttons */}
+            {/* Action Buttons: Add to Bag & Instagram Inquiry */}
             <div className="space-y-3 pt-2">
-              {/* WhatsApp Signature Order Button */}
-              <a
-                href={`https://wa.me/8801700000000?text=${whatsappOrderMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-4 rounded-lg bg-[#603500] hover:bg-[#4a2800] text-white text-xs uppercase tracking-[0.2em] font-semibold transition duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg hover:-translate-y-0.5 border border-[#482700]"
-              >
-                <MessageCircle size={17} />
-                <span>Order via WhatsApp (1-Click)</span>
-              </a>
-
               {/* Add to Bag Button */}
               <button
                 onClick={handleAddToCart}
-                className="w-full py-3.5 rounded-lg border border-[#2c221e] bg-[#2c221e] hover:bg-black text-white text-xs uppercase tracking-[0.2em] font-medium transition duration-300 flex items-center justify-center gap-2 shadow-sm"
+                className="w-full py-4 rounded-lg bg-[#2c221e] hover:bg-black text-white text-xs uppercase tracking-[0.2em] font-medium transition duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
               >
                 <ShoppingBag size={16} className="text-[#dfc29c]" />
                 <span>{addedToast ? 'Added to Bag ✓' : `Add Size ${selectedSize} to Bag`}</span>
               </button>
+
+              {/* Instagram Order Direct Link */}
+              <a
+                href="https://ig.me/m/sehr.bd"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-stone-800 text-xs uppercase tracking-[0.18em] font-medium transition duration-300 flex items-center justify-center gap-2"
+              >
+                <InstagramIcon size={15} className="text-[#5a483c]" />
+                <span>Inquire / Order on Instagram (@sehr.bd)</span>
+              </a>
             </div>
 
             {/* Secondary category confirmation */}
@@ -291,7 +288,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
               <div className="p-4 rounded-lg border border-stone-200 bg-[#faf7f2]/60 text-center space-y-2">
                 <RotateCcw size={22} className="mx-auto text-[#5a483c]" />
                 <p className="text-[11px] text-stone-700 leading-snug">
-                  Complimentary alteration & sizing consultation via WhatsApp.
+                  Complimentary alteration & bespoke sizing assistance upon request.
                 </p>
               </div>
             </div>

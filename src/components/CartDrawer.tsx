@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Trash2, ShoppingBag, ArrowRight, MessageCircle, Tag, Truck, Check } from 'lucide-react';
+import { X, Trash2, ShoppingBag, ArrowRight, Tag, Truck, Check } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 interface CartDrawerProps {
@@ -47,25 +47,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onCheckout }) => {
       currency: 'BDT',
       maximumFractionDigits: 0
     }).format(amount).replace('BDT', '৳');
-  };
-
-  // Build WhatsApp Bag summary
-  const generateWhatsAppOrderText = () => {
-    let text = `Hello SEHR Atelier,\nI would like to place an order for the following items:\n\n`;
-    cart.forEach((item, index) => {
-      text += `${index + 1}. ${item.product.name}\n   Size: ${item.size} | Qty: ${item.quantity} | Price: ${formattedCurrency(item.product.price * item.quantity)}\n`;
-    });
-    text += `\nSubtotal: ${formattedCurrency(subtotal)}`;
-    if (discountAmount > 0) {
-      text += `\nDiscount: -${formattedCurrency(discountAmount)} (${couponCode})`;
-    }
-    text += `\nShipping: ${shippingFee === 0 ? 'Complimentary' : formattedCurrency(shippingFee)}`;
-    text += `\nTotal: ${formattedCurrency(total)}`;
-    if (tailoringNote.trim()) {
-      text += `\n\nTailoring / Fitting Notes:\n${tailoringNote.trim()}`;
-    }
-    text += `\n\nPlease confirm availability and payment details. Thank you!`;
-    return encodeURIComponent(text);
   };
 
   return (
@@ -311,21 +292,11 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onCheckout }) => {
                   closeCart();
                   onCheckout();
                 }}
-                className="w-full py-3.5 bg-brand-dark hover:bg-brand-espresso text-white rounded-lg text-xs uppercase tracking-[0.2em] font-medium transition duration-300 flex items-center justify-center gap-2 shadow-md"
+                className="w-full py-4 bg-brand-dark hover:bg-black text-white rounded-lg text-xs uppercase tracking-[0.2em] font-medium transition duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
               >
                 <span>Proceed to Checkout</span>
                 <ArrowRight size={15} className="text-brand-gold" />
               </button>
-
-              <a
-                href={`https://wa.me/8801700000000?text=${generateWhatsAppOrderText()}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3 bg-brand-amber hover:bg-amber-900 text-white rounded-lg text-xs uppercase tracking-[0.15em] font-medium transition duration-300 flex items-center justify-center gap-2 shadow-sm border border-amber-800"
-              >
-                <MessageCircle size={15} />
-                <span>Order Bag via WhatsApp</span>
-              </a>
             </div>
 
             <p className="text-[10px] text-center text-stone-500 uppercase tracking-widest font-sans">

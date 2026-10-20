@@ -16,7 +16,7 @@ import { PRODUCTS } from './data/products';
 import { Product, CategoryFilter, SortOption } from './types';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
-import { MessageCircle } from 'lucide-react';
+import { InstagramIcon } from './components/icons/InstagramIcon';
 
 const AppContent: React.FC = () => {
   // Navigation View: 'home' | 'product'
@@ -150,17 +150,17 @@ const AppContent: React.FC = () => {
         />
       </div>
 
-      {/* Floating WhatsApp Quick Order Button */}
-      <aside aria-label="WhatsApp Concierge" className="fixed bottom-6 left-6 z-30">
+      {/* Floating Instagram Quick Order Button */}
+      <aside aria-label="Instagram Concierge" className="fixed bottom-6 left-6 z-30">
         <a
-          href="https://wa.me/8801700000000?text=Hello%20SEHR,%20I%20would%20like%20to%20place%20an%20order."
+          href="https://ig.me/m/sehr.bd"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#603500] hover:bg-[#4a2800] text-white shadow-xl hover:shadow-2xl transition-all duration-300 text-xs font-semibold tracking-wider uppercase group border border-[#482700]"
-          title="Order via WhatsApp"
+          className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#2c221e] hover:bg-[#4a2800] text-white shadow-xl hover:shadow-2xl transition-all duration-300 text-xs font-semibold tracking-wider uppercase group border border-stone-700"
+          title="Order via Instagram"
         >
-          <MessageCircle size={18} className="text-white group-hover:scale-110 transition-transform" />
-          <span className="hidden sm:inline">WhatsApp Order</span>
+          <InstagramIcon size={17} className="text-[#dfc29c] group-hover:scale-110 transition-transform" />
+          <span className="hidden sm:inline">Order via Instagram</span>
         </a>
       </aside>
 

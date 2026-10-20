@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Heart, Search, Menu, X, MessageCircle } from 'lucide-react';
+import { ShoppingBag, Heart, Search, Menu, X } from 'lucide-react';
 import { InstagramIcon } from './icons/InstagramIcon';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
@@ -218,13 +218,13 @@ export const Header: React.FC<HeaderProps> = ({
 
             <div className="pt-6 border-t border-stone-200 space-y-4">
               <a
-                href="https://wa.me/8801700000000"
+                href="https://ig.me/m/sehr.bd"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3 bg-[#603500] hover:bg-[#4a2800] text-white rounded-lg text-xs font-semibold tracking-widest uppercase transition shadow"
+                className="flex items-center justify-center gap-2 w-full py-3 bg-[#2c221e] hover:bg-black text-white rounded-lg text-xs font-semibold tracking-widest uppercase transition shadow"
               >
-                <MessageCircle size={16} />
-                <span>Order via WhatsApp</span>
+                <InstagramIcon size={16} />
+                <span>Order via Instagram</span>
               </a>
 
               <div className="flex items-center justify-center gap-4 text-stone-500 text-xs">

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Product } from '../types';
-import { Heart, MessageCircle, ShoppingBag } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { useWishlist } from '../context/WishlistContext';
-import { useCart } from '../context/CartContext';
 
 interface ProductCardProps {
   product: Product;
@@ -14,32 +13,15 @@ interface ProductCardProps {
 export const ProductCard: React.FC<ProductCardProps> = ({
   product,
   onOpenProductPage,
-  onQuickView,
-  onOpenSizeGuide
 }) => {
   const { isInWishlist, toggleWishlist } = useWishlist();
-  const { addToCart } = useCart();
   const [isHovered, setIsHovered] = useState(false);
-  const [selectedSize, setSelectedSize] = useState<string>('40');
-  const [addedToast, setAddedToast] = useState(false);
 
   const isFavorited = isInWishlist(product.id);
   const primaryImage = product.images[0];
   const secondaryImage = product.images[1] || primaryImage;
 
-  const handleQuickAdd = (size: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setSelectedSize(size);
-    addToCart(product, size, 1);
-    setAddedToast(true);
-    setTimeout(() => setAddedToast(false), 1200);
-  };
-
   const formattedPrice = `৳ ${product.price.toLocaleString()}`;
-
-  const whatsappMessage = encodeURIComponent(
-    `Hello SEHR,\nI would like to order "${product.name} | Echoes of Grace" in Size ${selectedSize} (${formattedPrice}).\nPlease let me know the availability.`
-  );
 
   return (
     <div
@@ -86,30 +68,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         >
           <Heart size={16} fill={isFavorited ? 'currentColor' : 'none'} />
         </button>
-
       </div>
 
-      {/* 2. Product Name & Price (Exact Guzel Screenshot 2 Typography) */}
-      <div className="pt-4 pb-6 px-2 text-center space-y-2">
+      {/* 2. Product Name & Price (Exact Guzel Screenshot 2 Typography - Clean, No Clutter) */}
+      <div className="pt-4 pb-2 px-2 text-center space-y-1.5">
         <h3 className="text-xl sm:text-2xl font-serif font-normal text-stone-900 group-hover:text-[#5a483c] transition">
           {product.name}
         </h3>
 
         <div className="text-sm sm:text-base font-serif font-medium text-stone-900">
           {formattedPrice}
-        </div>
-
-        {/* Guzel Style WhatsApp Button */}
-        <div className="pt-2 max-w-xs mx-auto" onClick={(e) => e.stopPropagation()}>
-          <a
-            href={`https://wa.me/8801700000000?text=${whatsappMessage}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full bg-[#603500] hover:bg-[#4a2800] text-white py-3 px-4 rounded-lg font-semibold text-xs tracking-[0.16em] uppercase transition duration-300 shadow hover:shadow-md hover:-translate-y-0.5 border border-[#482700]"
-          >
-            <MessageCircle size={15} />
-            <span>Order via WhatsApp</span>
-          </a>
         </div>
       </div>
     </div>

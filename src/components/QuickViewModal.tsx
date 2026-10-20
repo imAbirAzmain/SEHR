@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Product } from '../types';
-import { X, Ruler, ShoppingBag, MessageCircle, Heart, Truck, ShieldCheck, Check } from 'lucide-react';
+import { X, Ruler, ShoppingBag, Heart, Truck, ShieldCheck, Check } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 
@@ -45,10 +45,6 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({
       onClose();
     }, 600);
   };
-
-  const whatsappMessage = encodeURIComponent(
-    `Hello SEHR Atelier,\nI would like to order "${product.name} | Echoes of Grace" in Size ${selectedSize} (Quantity: ${quantity}) - ${formattedPrice}.\nPlease confirm order processing.`
-  );
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6">
@@ -211,18 +207,8 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({
               </div>
             </div>
 
-            {/* Action Buttons: WhatsApp (Guzel Style) + Bag */}
-            <div className="space-y-2.5 pt-2">
-              <a
-                href={`https://wa.me/8801700000000?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3.5 rounded-lg bg-[#603500] hover:bg-[#4a2800] text-white text-xs uppercase tracking-[0.18em] font-semibold transition duration-300 flex items-center justify-center gap-2 shadow-md border border-[#482700]"
-              >
-                <MessageCircle size={16} />
-                <span>Order via WhatsApp (1-Click)</span>
-              </a>
-
+            {/* Action Buttons: Add to Bag */}
+            <div className="pt-2">
               <button
                 onClick={handleAddToCart}
                 className="w-full py-3.5 rounded-lg border border-[#2c221e] bg-[#2c221e] hover:bg-black text-white text-xs uppercase tracking-[0.18em] font-medium transition duration-300 flex items-center justify-center gap-2 shadow-sm"
